@@ -25,3 +25,25 @@ class Solution {
 
     }
 }
+
+//Solution 2 : Tabulation Method
+
+class Solution
+{
+    //Function to find the maximum money the thief can get.
+    public int FindMaxSum(int arr[], int n)
+    {
+        // Your code here
+        int[] dp = new int[n+2];
+        Arrays.fill(dp,-1);
+        
+       dp[n] =0;
+       dp[n+1]=0;
+       
+       for(int i=n-1;i>=0;i--)
+       {
+           dp[i]=Math.max(arr[i]+dp[i+2],0+dp[i+1]);
+       }
+       return dp[0];
+    }
+}
