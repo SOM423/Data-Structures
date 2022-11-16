@@ -23,3 +23,23 @@ class Solution{
         return temp;
     }
 }
+
+//Using Recursion 
+
+class Solution{
+    public String removeConsecutiveCharacter(String S){
+       
+       if(S.length() ==0 || S.length() ==1)
+       {
+           return S;
+       }
+       if(S.charAt(0)==S.charAt(1))
+       
+       return removeConsecutiveCharacter(S.substring(1));
+       
+       else
+       
+       return S.charAt(0) + removeConsecutiveCharacter(S.substring(1));
+       
+    }
+}
